@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>OTP Verification</h1>
+      <% if (error) { %>
+      <p style="color: red"><%= error %></p>
+      <% } %>
+      <form action="/verify-otp" method="POST">
+        <input type="hidden" name="phoneNumber" value="<%= phoneNumber %>" />
+        <input type="text" name="otp" placeholder="Enter OTP" required />
+        <button type="submit">Verify</button>
+      </form>
+    </div>
+  </body>
+</html>
